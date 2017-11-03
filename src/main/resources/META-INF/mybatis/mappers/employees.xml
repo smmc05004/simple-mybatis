@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.sample.demo1.mappers.EmployeeMapper">
+
+	<!-- typeAlias는 config파일에 등록후 사용 -->
+	<select id="getAllEmployees" resultType="Employee">
+		select
+			employee_id		as id,
+			first_name		as firstName,
+			last_name		as lastName,
+			phone_number	as phoneNumber,
+			email			as email,
+			hire_date		as hireDate,
+			job_id			as jobId,
+			salary			as salary,
+			commission_pct	as commissionPct,
+			manager_id		as managerId,
+			department_id	as departmentId
+		from 
+			employees
+		order by
+			employee_id asc
+	</select>
+
+</mapper>
